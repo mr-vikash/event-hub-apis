@@ -19,6 +19,7 @@ func RegisterRoutes() {
 
 	// Protected
 	http.HandleFunc("/events/create", middleware.AuthMiddleware(handlers.CreateEvent))
+	http.HandleFunc("/tickets/create", middleware.AuthMiddleware(handlers.CreateTicket))
 	http.HandleFunc("/events", handlers.GetEvents)
 	http.HandleFunc("/events/join", middleware.AuthMiddleware(handlers.JoinEvent))
 }
